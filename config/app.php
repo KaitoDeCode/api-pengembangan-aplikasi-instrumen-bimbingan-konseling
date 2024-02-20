@@ -31,6 +31,8 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
+    'api_key' => env('API_KEY'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
