@@ -29,28 +29,19 @@ Route::middleware('cekKey')->group(function () {
     });
     Route::middleware(['auth:sanctum','cekAdmin'])->group(function () {
         Route::get("/test-admin",fn()=> response()->json(auth()->user()));
+        Route::apiResource('instrument', App\Http\Controllers\InstrumentController::class);
+        Route::apiResource('group', App\Http\Controllers\GroupController::class);
+        Route::apiResource('question', App\Http\Controllers\QuestionController::class);
+        Route::apiResource('answer', App\Http\Controllers\AnswerController::class);
+        Route::apiResource('criteria', App\Http\Controllers\CriteriaController::class);
     });
 
     Route::middleware(['auth:sanctum','cekUser'])->group(function () {
         Route::get("/test-user",fn()=> response()->json(auth()->user()));
         Route::controller(AuthController::class)->group(function () {
+        Route::apiResource('participation', App\Http\Controllers\ParticipationController::class);
 
         });
     });
 });
 
-
-Route::apiResource('instrument', App\Http\Controllers\InstrumentController::class);
-
-
-Route::apiResource('instrument', App\Http\Controllers\InstrumentController::class);
-
-Route::apiResource('group', App\Http\Controllers\GroupController::class);
-
-Route::apiResource('question', App\Http\Controllers\QuestionController::class);
-
-Route::apiResource('answer', App\Http\Controllers\AnswerController::class);
-
-Route::apiResource('criteria', App\Http\Controllers\CriteriaController::class);
-
-Route::apiResource('participation', App\Http\Controllers\ParticipationController::class);
