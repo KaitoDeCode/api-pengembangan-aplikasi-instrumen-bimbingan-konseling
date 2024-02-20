@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AnswerControllerStoreRequest;
-use App\Http\Requests\AnswerControllerUpdateRequest;
+use App\Http\Requests\AnswerStoreRequest as AnswerControllerStoreRequest;
+use App\Http\Requests\AnswerUpdateRequest as AnswerControllerUpdateRequest;
 use App\Http\Resources\AnswerCollection;
 use App\Http\Resources\AnswerResource;
 use App\Models\Answer;

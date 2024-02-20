@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CriteriaControllerStoreRequest;
-use App\Http\Requests\CriteriaControllerUpdateRequest;
+use App\Http\Requests\CriterionStoreRequest as CriteriaControllerStoreRequest;
+use App\Http\Requests\CriterionUpdateRequest as CriteriaControllerUpdateRequest;
 use App\Http\Resources\CriterionCollection;
 use App\Http\Resources\CriterionResource;
-use App\Models\Criteria;
+use App\Models\Criteria as Criterion;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
