@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\GroupControllerStoreRequest;
-use App\Http\Requests\GroupControllerUpdateRequest;
+use App\Http\Requests\GroupStoreRequest as GroupControllerStoreRequest;
+use App\Http\Requests\GroupUpdateRequest as GroupControllerUpdateRequest;
 use App\Http\Resources\GroupCollection;
 use App\Http\Resources\GroupResource;
 use App\Models\Group;

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\InstrumentControllerStoreRequest;
-use App\Http\Requests\InstrumentControllerUpdateRequest;
+use App\Http\Requests\InstrumentStoreRequest as InstrumentControllerStoreRequest;
+use App\Http\Requests\InstrumentUpdateRequest as InstrumentControllerUpdateRequest;
 use App\Http\Resources\InstrumentCollection;
 use App\Http\Resources\InstrumentResource;
 use App\Models\Instrument;
