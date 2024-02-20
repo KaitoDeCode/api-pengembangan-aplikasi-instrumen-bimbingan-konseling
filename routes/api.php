@@ -25,6 +25,6 @@ Route::middleware('cekKey')->group(function () {
     Route::post('register',[AuthController::class,'register']);
 
     Route::middleware('auth:sanctum')->group(function () {
-        // Route::get("/test")
+        Route::get("/test",fn()=> response()->json("tes"));
     });
 });

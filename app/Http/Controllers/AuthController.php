@@ -13,19 +13,28 @@ class AuthController extends Controller
     public function login(RequestLogin $request){
         $data = $request->validated();
         $user = User::where('email',$data['email'])->first();
-        if($user && Hash::check($data['password'],$user->password)){
+
+        if(is_null($user)){
+            return response()->json([
+                "success"=> false,
+                "message" => "account not found",
+            ], 404);
+        }
+
+        if(!Hash::check($data['password'],$user->password)){
             return response()->json([
                 "success"=> false,
                 "message" => "invalid credentials",
             ], 404);
         }
+
         $token = $user->createToken('access-token')->plainTextToken;
 
         return response()->json([
             "success"=> true,
             "message" => "success login",
             "access-token" => $token,
-        ], 200);
+        ]);
     }
 
     public function register(RequestRegister $request){
