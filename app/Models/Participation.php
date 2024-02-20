@@ -16,7 +16,7 @@ class Participation extends Model
      * @var array
      */
     protected $fillable = [
-        'survey_id',
+        'instrument_id',
         'group_id',
         'user_id',
         'criteria_id',
@@ -30,16 +30,16 @@ class Participation extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'survey_id' => 'integer',
+        'instrument_id' => 'integer',
         'group_id' => 'integer',
         'user_id' => 'integer',
         'criteria_id' => 'integer',
         'point' => 'decimal',
     ];
 
-    public function survey(): BelongsTo
+    public function instrument(): BelongsTo
     {
-        return $this->belongsTo(Survey::class);
+        return $this->belongsTo(Instrument::class);
     }
 
     public function group(): BelongsTo

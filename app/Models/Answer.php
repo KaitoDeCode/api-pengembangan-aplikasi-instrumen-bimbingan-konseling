@@ -16,7 +16,7 @@ class Answer extends Model
      * @var array
      */
     protected $fillable = [
-        'survey_id',
+        'instrument_id',
         'text',
         'pointFav',
         'pointUnFav',
@@ -29,13 +29,13 @@ class Answer extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'survey_id' => 'integer',
+        'instrument_id' => 'integer',
         'pointFav' => 'decimal',
         'pointUnFav' => 'decimal',
     ];
 
-    public function survey(): BelongsTo
+    public function instrument(): BelongsTo
     {
-        return $this->belongsTo(Survey::class);
+        return $this->belongsTo(Instrument::class);
     }
 }

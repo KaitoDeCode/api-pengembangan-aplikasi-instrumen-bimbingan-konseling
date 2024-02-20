@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Criteria;
-use App\Models\Survey;
+use App\Models\Instrument;
 
 class CriteriaFactory extends Factory
 {
@@ -22,7 +22,7 @@ class CriteriaFactory extends Factory
     public function definition(): array
     {
         return [
-            'survey_id' => Survey::factory(),
+            'instrument_id' => Instrument::factory(),
             'text' => $this->faker->word(),
             'minimum' => $this->faker->randomFloat(0, 0, 9999999999.),
             'maximum' => $this->faker->randomFloat(0, 0, 9999999999.),

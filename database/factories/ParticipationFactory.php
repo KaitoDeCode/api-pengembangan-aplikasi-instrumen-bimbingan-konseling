@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Criterion;
 use App\Models\Group;
+use App\Models\Instrument;
 use App\Models\Participation;
-use App\Models\Survey;
 use App\Models\User;
 
 class ParticipationFactory extends Factory
@@ -25,7 +25,7 @@ class ParticipationFactory extends Factory
     public function definition(): array
     {
         return [
-            'survey_id' => Survey::factory(),
+            'instrument_id' => Instrument::factory(),
             'group_id' => Group::factory(),
             'user_id' => User::factory(),
             'criteria_id' => Criterion::factory(),

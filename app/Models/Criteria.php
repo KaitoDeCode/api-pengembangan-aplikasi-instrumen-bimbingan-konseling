@@ -16,7 +16,7 @@ class Criteria extends Model
      * @var array
      */
     protected $fillable = [
-        'survey_id',
+        'instrument_id',
         'text',
         'minimum',
         'maximum',
@@ -29,13 +29,13 @@ class Criteria extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'survey_id' => 'integer',
+        'instrument_id' => 'integer',
         'minimum' => 'decimal',
         'maximum' => 'decimal',
     ];
 
-    public function survey(): BelongsTo
+    public function instrument(): BelongsTo
     {
-        return $this->belongsTo(Survey::class);
+        return $this->belongsTo(Instrument::class);
     }
 }

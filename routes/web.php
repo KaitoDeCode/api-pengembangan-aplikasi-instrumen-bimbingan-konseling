@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('instrument', App\Http\Controllers\InstrumentController::class)->only('store', 'update');
+
+
+Route::resource('instrument', App\Http\Controllers\InstrumentController::class)->only('store', 'update');
+
+
+Route::get('instrument/delete', [App\Http\Controllers\InstrumentController::class, 'delete']);
+Route::resource('instrument', App\Http\Controllers\InstrumentController::class)->only('store', 'update');

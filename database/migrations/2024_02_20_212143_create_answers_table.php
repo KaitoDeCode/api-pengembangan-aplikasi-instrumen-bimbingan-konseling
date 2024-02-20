@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('questions', function (Blueprint $table) {
+        Schema::create('answers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('survey_id')->constrained();
+            $table->foreignId('instrument_id')->constrained();
             $table->longText('text');
-            $table->boolean('favorable');
+            $table->decimal('pointFav');
+            $table->decimal('pointUnFav');
             $table->timestamps();
         });
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('questions');
+        Schema::dropIfExists('answers');
     }
 };

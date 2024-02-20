@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('participations', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('survey_id')->constrained();
-            $table->foreignId('group_id')->constrained();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('criteria_id')->constrained();
-            $table->decimal('point');
+            $table->foreignId('instrument_id')->constrained();
+            $table->longText('text');
+            $table->boolean('favorable');
             $table->timestamps();
         });
 
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('participations');
+        Schema::dropIfExists('questions');
     }
 };

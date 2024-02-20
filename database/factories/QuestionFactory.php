@@ -4,8 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use App\Models\Instrument;
 use App\Models\Question;
-use App\Models\Survey;
 
 class QuestionFactory extends Factory
 {
@@ -22,7 +22,7 @@ class QuestionFactory extends Factory
     public function definition(): array
     {
         return [
-            'survey_id' => Survey::factory(),
+            'instrument_id' => Instrument::factory(),
             'text' => $this->faker->text(),
             'favorable' => $this->faker->boolean(),
         ];
