@@ -30,6 +30,10 @@ class AuthController extends Controller
 
         $token = $user->createToken('access-token')->plainTextToken;
 
+        $token->forceFill([
+            'expires_at' => now()->addDays(3),
+        ])->save();
+
         return response()->json([
             "success"=> true,
             "message" => "success login",
