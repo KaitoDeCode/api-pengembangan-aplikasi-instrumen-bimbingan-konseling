@@ -27,4 +27,11 @@ Route::middleware('cekKey')->group(function () {
     Route::middleware('auth:sanctum')->group(function () {
         Route::get("/test",fn()=> response()->json(auth()->user()));
     });
+    Route::middleware(['auth:sanctum','cekAdmin'])->group(function () {
+        Route::get("/test-admin",fn()=> response()->json(auth()->user()));
+    });
+
+    Route::middleware(['auth:sanctum','cekUser'])->group(function () {
+        Route::get("/test-user",fn()=> response()->json(auth()->user()));
+    });
 });
