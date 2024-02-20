@@ -20,6 +20,11 @@ class AuthController extends Controller
             ], 404);
         }
         $token = $user->createToken('access-token')->plainTextToken;
+
+        return response()->json([
+            "success"=> true,
+            "message" => "success login",
+        ], 200);
     }
 
     public function register(RequestRegister $request){
