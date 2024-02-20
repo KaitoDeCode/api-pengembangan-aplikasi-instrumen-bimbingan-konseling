@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\QuestionControllerStoreRequest;
-use App\Http\Requests\QuestionControllerUpdateRequest;
+use App\Http\Requests\QuestionStoreRequest as QuestionControllerStoreRequest;
+use App\Http\Requests\QuestionUpdateRequest as QuestionControllerUpdateRequest;
 use App\Http\Resources\QuestionCollection;
 use App\Http\Resources\QuestionResource;
 use App\Models\Question;
